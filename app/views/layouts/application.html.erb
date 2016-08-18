@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MixtapeRails</title>
+    <title>it's my mixtape, fam</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -10,5 +10,6 @@
     <div id="rapper">
       <%= yield %>
     </div>
+    <%= link_to "Made by Polyov", "http://www.polyov.com", id:"attrb", target:"_blank" %>
   </body>
 </html>

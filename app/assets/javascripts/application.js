@@ -18,6 +18,8 @@
 SOUNDCLOUD_EMBED_CONST = '<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=URL_GOES_HERE&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>'
 
 $(document).ready(function() {
+  $('#loading-box').toggle();
+  $('#soundcloud-box').toggle();
   get_tracks();
   $('#refresh-button').click(get_tracks);
 });
@@ -25,17 +27,19 @@ $(document).ready(function() {
 function get_tracks() {
   $.ajax('/tracks', {
     success:function(data) {
-      $('#tracks-box').text("");
+      $('#soundcloud-box').html("");
       for (var i=0;i<data.length;i++) {
         show_track(data[i])
       }
+      $('#soundcloud-box').toggle();
+      $('#loading-box').toggle();
     },
     beforeSend:function() {
-      $('#tracks-box').text("LOADING A NEW DOPE MIXTAPE FAM");
+      $('#loading-box').toggle();
     }
   });
 }
 
 function show_track(track_url) {
-  $('#tracks-box').append(SOUNDCLOUD_EMBED_CONST.replace("URL_GOES_HERE", encodeURI(track_url)));
+  $('#soundcloud-box').append(SOUNDCLOUD_EMBED_CONST.replace("URL_GOES_HERE", encodeURI(track_url)));
 }

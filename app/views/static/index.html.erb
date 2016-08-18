@@ -1,6 +1,12 @@
 <%= content_tag :div, id:"header" do %>
-  <%= content_tag :h1, "SUP Y'ALL THX FOR CHECKING OUT MY MIXTAPE"%>
+  <%= content_tag :h1, "DIS MY MIXTAPE" %>
   <%= content_tag :p, "Here are some of my dope tracks for ur listening pleasure"%>
   <%= content_tag :button, "Refresh", id:"refresh-button" %>
 <% end %>
-<%= content_tag :div, "", id:"tracks-box" %>
+<%= content_tag :div, id:"tracks-box" do %>
+  <%= content_tag :div, id:"loading-box" do %>
+    <%= content_tag :p, "LOADING A FRESH MIXTAPE FOR YOU FAM" %>
+    <%= image_tag "spinner.gif" %>
+  <% end %>
+  <%= content_tag :div, "", id:"soundcloud-box" %>
+<% end %>
