@@ -1,5 +1,12 @@
 class StaticController < ApplicationController
   def index
+    set_meta_tags title: "Check out my mixtape",
+                  description: "Generates hip-hop playlists from SoundCloud",
+                  og: {
+                    title: "Check out my mixtape",
+                    image: asset-path("mixtape.jpeg")
+                  }
+
   end
 
   def fetch_tracks(client)
