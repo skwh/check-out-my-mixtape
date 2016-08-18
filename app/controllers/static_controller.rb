@@ -3,7 +3,7 @@ class StaticController < ApplicationController
     set_meta_tags description: "Generates hip-hop playlists from SoundCloud",
                   og: {
                     title: "Check out my mixtape",
-                    image: ActionController::Base.helpers.asset_path("mixtape.jpeg")
+                    image: "http://www.checkoutmymixtape.com" + ActionController::Base.helpers.asset_path("mixtape.jpeg")
                   }
   end
 
