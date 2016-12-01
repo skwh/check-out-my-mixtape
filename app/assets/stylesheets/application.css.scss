@@ -14,20 +14,18 @@
  *= require_self
  */
 
-@font-face {
-  font-family: "Graffiti";
-  src: asset-url("amsterdam_graffiti.ttf");
-}
-@font-face {
-  font-family: "BioRhyme";
-  src: asset-url("BioRhyme-Light.ttf");
-}
+ @font-face {
+   font-family:"Coolvetica";
+   src: asset-url("coolvetica.ttf");
+ }
 
 body {
+  font-family:"Helvetica", "Helvetica Neue", "Coolvetica", sans-serif;
   margin:0;
   padding:0;
-  background-image:image-url("carbon_fibre.png");
-  font-family: "BioRhyme", "Arial", sans-serif;
+}
+
+.center {
   text-align: center;
 }
 
@@ -37,40 +35,50 @@ body {
   margin:auto;
   margin-bottom:5%;
   background-color:white;
-  border:2px solid black;
-  border-radius:15px;
-  -webkit-box-shadow: 0px 0px 18px 3px rgba(166,7,155,1);
-  -moz-box-shadow: 0px 0px 18px 3px rgba(166,7,155,1);
-  box-shadow: 0px 0px 18px 3px rgba(166,7,155,1);
-
-  h1 {
-    font-family:"Graffiti", serif;
-    font-size:9vw;
-    margin:0;
-    color:red;
-    text-shadow: 1px 1px 6px rgba(79, 95, 231, 1);
-  }
-
-  p {
-    font-size: 1.8vw;
-    margin:0;
-  }
 
   #loading-box {
     text-align: center;
+    margin-top:10%;
     img {
       display:block;
       margin:auto;
+      width:10%;
     }
     p {
       font-size:1.5vw;
+      letter-spacing: -0.1vw;
     }
   }
 }
 
+#refresh-button {
+  font-family:"Helvetica", "Helvetica Neue", "Coolvetica", sans-serif;
+  font-size:2vw;
+  font-weight:bold;
+  background-color:white;
+  border: 2px solid white;
+  padding:1%;
+  &:hover {
+    border: 2px solid black;
+  }
+}
+
 #header {
-  text-align: center;
   margin-bottom:1%;
+  h1 {
+    font-size:10vw;
+    margin:0;
+    letter-spacing:-0.7vw;
+    line-height: 17vh;
+  }
+
+  p {
+    font-size: 1.8vw;
+    letter-spacing: -0.1vw;
+    margin-top:2%;
+    margin-right:-10%;
+    text-align: right;
+  }
 }
 
 #attrb {
